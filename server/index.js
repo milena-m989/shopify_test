@@ -45,6 +45,9 @@ export async function createServer(
   app.set("active-shopify-shops", ACTIVE_SHOPIFY_SHOPS);
   app.set("use-online-tokens", USE_ONLINE_TOKENS);
 
+  console.log(`Starting with HOST: ${process.env.HOST}`);
+  console.log(`Starting with SCOPES: ${process.env.SCOPES}`);
+
   app.use(cookieParser(Shopify.Context.API_SECRET_KEY));
 
   applyAuthMiddleware(app);
